@@ -1,5 +1,8 @@
 import pytest
+
 from src.class_category import Category
+
+
 @pytest.fixture
 def category_fruit():
     return Category("fruits", "fruits from India", ["banana", "mango"])
