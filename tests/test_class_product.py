@@ -1,15 +1,10 @@
-import pytest
+def test_product(first_product, second_product):
+    assert first_product.name == "Product"
+    assert first_product.description == "Description of the product"
+    assert first_product.price == 84.50
+    assert first_product.quantity == 10
 
-from src.class_product import Product
-
-
-@pytest.fixture
-def product_apple():
-    return Product("Apple", "red", 99.9, 1000)
-
-
-def test_init_product(product_apple):
-    assert product_apple.name == "Apple"
-    assert product_apple.description == "red"
-    assert product_apple.price == 99.9
-    assert product_apple.quantity == 1000
+    assert second_product.name == "Product number two"
+    assert second_product.description == ("Description of" " the product number two")
+    assert second_product.price == 155.87
+    assert second_product.quantity == 34
