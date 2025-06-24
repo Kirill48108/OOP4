@@ -32,7 +32,7 @@ class Category:
         Category.product_count += 1
 
     @property
-    def products(self) -> str:
+    def get_product_list(self) -> str:
         product_list = ""
         for product in self.__products:
             product_list += f"{str(product)}\n"
@@ -44,7 +44,3 @@ class Category:
         for product in self.__products:
             products_list.append(product)
         return products_list
-
-
-# result = Category("Product", "Description", ["product1", "product2", "product3"])
-# print(result)
