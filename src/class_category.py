@@ -1,10 +1,9 @@
 from typing import Any
 
-from src.base import Base
 from src.class_product import Product
 
 
-class Category(Base):
+class Category:
     """Категория товара"""
 
     category_count = 0
@@ -47,5 +46,6 @@ class Category(Base):
         return products_list
 
 
-# result = Category("Product", "Description", ["product1", "product2", "product3"])
-# print(result)
+if __name__ == "__main__":
+    result = Category("Product", "Description", ["product1", "product2", "product3"])
+    print(result)

@@ -1,8 +1,7 @@
-from src.base import Base
 from src.class_product import Product
 
 
-class Order(Base):
+class Order:
     product: str
     quantity: int
     total_price: float

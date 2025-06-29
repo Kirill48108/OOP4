@@ -10,7 +10,13 @@ class Product(BaseProduct, MixinPrint):
     price: float
     quantity: int
 
-    def __init__(self, name, description, price, quantity):
+    def __init__(
+        self,
+        name,
+        description,
+        price,
+        quantity,
+    ):
         self.name = name
         self.description = description
         self.__price = price
@@ -23,7 +29,7 @@ class Product(BaseProduct, MixinPrint):
     def __add__(self, other):
         if type(other) is Product:
             return self.quantity * self.price + other.quantity * other.price
-        raise TypeError
+        return super().__add__(other)
 
     @classmethod
     def new_product(cls, new_product: dict):
