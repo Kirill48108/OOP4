@@ -1,6 +1,5 @@
 import pytest
 
-
 from src.class_category import Category
 from src.class_product import Product
 from src.lawn_grass_product import LawnGrass
@@ -112,3 +111,12 @@ def lawn_grass1():
 @pytest.fixture
 def lawn_grass2():
     return LawnGrass("Газонная трава 2", "Выносливая трава", 450.0, 15, "США", "5 дней", "Темно-зеленый")
+
+
+@pytest.fixture
+def category_without_products():
+    return Category(
+        name="Category without products",
+        description="Description of the category without products",
+        products=[],
+    )
