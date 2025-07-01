@@ -27,9 +27,10 @@ class Product(BaseProduct, MixinPrint):
         return f"{self.name}, {self.price} руб. Остаток: {self.quantity} шт."
 
     def __add__(self, other):
-        if type(other) is Product:
+        if isinstance(other, self.__class__):
             return self.quantity * self.price + other.quantity * other.price
-        return super().__add__(other)
+        else:
+            raise TypeError("Нельзя складывать объекты разных типов")
 
     @classmethod
     def new_product(cls, new_product: dict):
