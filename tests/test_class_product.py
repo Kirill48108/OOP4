@@ -45,3 +45,10 @@ def test_product_add_error(smartphone2, lawn_grass2):
     with pytest.raises(TypeError):
         result1 = smartphone2 + lawn_grass2
         result2 = smartphone2 + 3
+
+def test_product_zero_error(first_product,second_product):
+    with pytest.raises(TypeError):
+        first_product.price(-1)
+        second_product.price(0)
+
+
