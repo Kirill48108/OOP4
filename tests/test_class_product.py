@@ -46,9 +46,7 @@ def test_product_add_error(smartphone2, lawn_grass2):
         result1 = smartphone2 + lawn_grass2
         result2 = smartphone2 + 3
 
-def test_product_zero_error(first_product,second_product):
-    with pytest.raises(TypeError):
-        first_product.price(-1)
-        second_product.price(0)
 
-
+def test_failed_to_create_product_with_invalid_quantity():
+    with pytest.raises(ValueError):
+        Product("name", "desc", 100, quantity=-1)
